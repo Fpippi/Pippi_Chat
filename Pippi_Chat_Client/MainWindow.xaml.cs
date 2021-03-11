@@ -24,5 +24,14 @@ namespace Pippi_Chat_Client
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Chat app2 = new Chat();
+            app2.Show();
+
+            this.Hide();
+
+        }
     }
 }
