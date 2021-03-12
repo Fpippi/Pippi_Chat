@@ -47,11 +47,37 @@ namespace Pippi_AsyncSocketLib
             {
                 // mettermi in ascolto
                 TcpClient client = await mServer.AcceptTcpClientAsync();
+                RegistraClient(client);
                 Debug.WriteLine("Client connesso: " + client.Client.RemoteEndPoint);
-                mclient.Add(client);
                 RiceviMessaggi(client);
             }
         }
+
+        public async void RegistraClient(TcpClient client)
+        {
+            mclient.Add(client);
+            NetworkStream stream = null;
+            StreamReader reader = null;
+            try
+            {
+                stream = client.GetStream();
+                reader = new StreamReader(stream);
+                char[] buff = new char[512];
+
+                Debug.WriteLine("Pronto ad ascoltare...");
+                int nBytes = await reader.ReadAsync(buff, 0, buff.Length);    
+                string recvMessage = new string(buff);
+                Debug.WriteLine("Returned bytes: {0}. Nickname: {1}", nBytes, recvMessage);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+        }
+
+
+
         public async void RiceviMessaggi(TcpClient client)
         {
 
@@ -80,7 +106,6 @@ namespace Pippi_AsyncSocketLib
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine(ex.Message);
             }
         }

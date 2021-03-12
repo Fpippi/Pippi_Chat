@@ -15,6 +15,8 @@ namespace Pippi_Chat_Server
             AsyncSocketServer server = new AsyncSocketServer();
             server.InizioAscolto();
 
+
+
             Console.ReadLine();
         }
     }
