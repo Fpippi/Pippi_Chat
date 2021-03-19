@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
+using Pippi_AsyncSocketLib.Model;
 
 namespace Pippi_AsyncSocketLib
 {
@@ -16,7 +17,7 @@ namespace Pippi_AsyncSocketLib
         int mPort;
         TcpListener mServer;
         bool continua;
-        List<TcpClient> mclient = new List<TcpClient> { };
+        List<ClientChat> mclient = new List<ClientChat> { };
 
         // Mette in ascolto il server
         public async void InizioAscolto(IPAddress ipaddr = null, int port = 23000)
@@ -55,7 +56,7 @@ namespace Pippi_AsyncSocketLib
 
         public async void RegistraClient(TcpClient client)
         {
-            mclient.Add(client);
+            //mclient.Add(client);
             NetworkStream stream = null;
             StreamReader reader = null;
             try
@@ -66,8 +67,13 @@ namespace Pippi_AsyncSocketLib
 
                 Debug.WriteLine("Pronto ad ascoltare...");
                 int nBytes = await reader.ReadAsync(buff, 0, buff.Length);    
-                string recvMessage = new string(buff);
-                Debug.WriteLine("Returned bytes: {0}. Nickname: {1}", nBytes, recvMessage);
+                string Nickname = new string(buff);
+                Debug.WriteLine("Returned bytes: {0}. Nickname: {1}", nBytes, Nickname);
+                ClientChat newclient = new ClientChat();
+                newclient.Nickname = Nickname;
+                newclient.Client = client;
+
+                mclient.Add(newclient);
             }
             catch (Exception ex)
             {
@@ -96,11 +102,13 @@ namespace Pippi_AsyncSocketLib
                     int nBytes = await reader.ReadAsync(buff, 0, buff.Length);
                     if (nBytes == 0)
                     {
+                        rimuoviClient(client);
                         Debug.WriteLine("Client disconnesso.");
                         break;
                     }
                     string recvMessage = new string(buff);
                     Debug.WriteLine("Returned bytes: {0}. Messaggio: {1}", nBytes, recvMessage);
+                    inviaATutti(recvMessage);
                 }
 
             }
@@ -112,10 +120,15 @@ namespace Pippi_AsyncSocketLib
 
         private void rimuoviClient(TcpClient client)
         {
-            if (mclient.Contains(client))
+
+            foreach (ClientChat elem in mclient)
             {
-                mclient.Remove(client);
+                if (elem.Client==client)
+                {
+                    mclient.Remove(elem);
+                }
             }
+            
         }
         public void inviaATutti(string messaggio)
         {

@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pippi_AsyncSocketLib.Model
 {
-    class ClientChat
-    {
-
+   public class ClientChat
+   {
         public string Nickname { get; set; }
 
         public TcpClient Client { get; set; }
-    }
+   }
 }
