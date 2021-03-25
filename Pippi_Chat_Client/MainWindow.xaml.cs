@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pippi_AsyncSocketLib;
+using Pippi_AsyncSocketLib.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +22,28 @@ namespace Pippi_Chat_Client
     /// </summary>
     public partial class MainWindow : Window
     {
+        public AsyncSocketClient Cliente = new AsyncSocketClient();
+
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+            Cliente.SerServerIPAddress(txt_ip.Text);
+            Cliente.SetServerPort(txt_porta.Text);
+
+            Cliente.ConnettiAlServer();
+
+            Cliente.invia(txt_nickname.Text);
+            
+
             Chat app2 = new Chat();
             app2.Show();
-
+            
             this.Hide();
 
         }

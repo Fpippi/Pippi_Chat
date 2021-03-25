@@ -1,0 +1,9 @@
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\bin\Debug\Pippi_Chat_Server.exe.config
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\bin\Debug\Pippi_Chat_Server.exe
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\bin\Debug\Pippi_Chat_Server.pdb
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\bin\Debug\Pippi_AsyncSocketLib.dll
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\bin\Debug\Pippi_AsyncSocketLib.pdb
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\obj\Debug\Pippi_Chat_Server.csprojAssemblyReference.cache
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\obj\Debug\Pippi_Chat_Server.csproj.CopyComplete
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\obj\Debug\Pippi_Chat_Server.exe
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Server\obj\Debug\Pippi_Chat_Server.pdb

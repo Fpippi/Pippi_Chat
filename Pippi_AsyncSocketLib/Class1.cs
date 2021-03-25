@@ -134,10 +134,10 @@ namespace Pippi_AsyncSocketLib
         {
             try
             {
-                foreach (var client in mclient)
+                foreach (ClientChat client in mclient)
                 {
                     byte[] buff = Encoding.ASCII.GetBytes(DateTime.Now.ToShortDateString());
-                    client.GetStream().WriteAsync(buff, 0, buff.Length);
+                    client.Client.GetStream().WriteAsync(buff, 0, buff.Length);
                 }
             }
             catch (Exception ex)
@@ -152,10 +152,10 @@ namespace Pippi_AsyncSocketLib
         {
             try
             {
-                foreach (var client in mclient)
+                foreach (ClientChat client in mclient)
                 {
-                    client.Close();
-                    rimuoviClient(client);
+                    client.Client.Close();
+                    rimuoviClient(client.Client);
                 }
                 mServer.Stop();
                 mServer = null;

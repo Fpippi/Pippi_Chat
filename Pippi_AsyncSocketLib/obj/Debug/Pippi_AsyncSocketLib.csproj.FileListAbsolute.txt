@@ -1,0 +1,5 @@
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_AsyncSocketLib\bin\Debug\Pippi_AsyncSocketLib.dll
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_AsyncSocketLib\bin\Debug\Pippi_AsyncSocketLib.pdb
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_AsyncSocketLib\obj\Debug\Pippi_AsyncSocketLib.csprojAssemblyReference.cache
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_AsyncSocketLib\obj\Debug\Pippi_AsyncSocketLib.dll
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_AsyncSocketLib\obj\Debug\Pippi_AsyncSocketLib.pdb
