@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Chat" Height="450" Width="800">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="333" Margin="48,31,0,0" VerticalAlignment="Top" Width="690"/>
-        <Button x:Name="txt_invio" Content="invio" HorizontalAlignment="Left" Margin="475,373,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="48,369,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="372"/>
-        <Button x:Name="txt_disconetti" Content="Disconetti" HorizontalAlignment="Left" Margin="644,373,0,0" VerticalAlignment="Top" Width="74"/>
+        <ListBox x:Name="lstMessaggi" HorizontalAlignment="Left" Height="333" Margin="48,31,0,0" VerticalAlignment="Top" Width="690"/>
+        <Button x:Name="btn_invio" Content="invio" HorizontalAlignment="Left" Margin="475,373,0,0" VerticalAlignment="Top" Width="74" Click="txt_invio_Click"/>
+        <TextBox x:Name="txt_invio1" HorizontalAlignment="Left" Height="23" Margin="48,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
+        <Button x:Name="btn_discontetti" Content="Disconetti" HorizontalAlignment="Left" Margin="644,373,0,0" VerticalAlignment="Top" Width="74" Click="btn_discontetti_Click"/>
 
     </Grid>
 </Window>

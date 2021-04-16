@@ -136,7 +136,7 @@ namespace Pippi_AsyncSocketLib
             {
                 foreach (ClientChat client in mclient)
                 {
-                    byte[] buff = Encoding.ASCII.GetBytes(DateTime.Now.ToShortDateString());
+                    byte[] buff = Encoding.ASCII.GetBytes(messaggio);
                     client.Client.GetStream().WriteAsync(buff, 0, buff.Length);
                 }
             }

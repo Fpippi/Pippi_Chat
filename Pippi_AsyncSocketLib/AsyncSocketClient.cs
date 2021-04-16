@@ -14,6 +14,17 @@ namespace Pippi_AsyncSocketLib
         IPAddress mServerIpAddress;
         int mServerPort;
         TcpClient mClient;
+
+        public List<string> Messaggi = new List<string>();
+        public event EventHandler OnNewMessage;
+
+        protected virtual void OnNewMessageHandler(EventArgs e)
+        {
+            //questo metodo lancia(invoca) l'evento
+            EventHandler handler = OnNewMessage;
+            handler?.Invoke(this, e);
+        }
+
         public IPAddress ServerIpAddress
         {
             get
@@ -78,12 +89,15 @@ namespace Pippi_AsyncSocketLib
             {
                 await mClient.ConnectAsync(ServerIpAddress, mServerPort);
                 Console.WriteLine("Connesso al server ip/port: {0} {1}",
+                    
                     mServerIpAddress.ToString(),mServerPort);
+                RiceviMessaggi();
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
+                
             }
 
             
@@ -109,7 +123,13 @@ namespace Pippi_AsyncSocketLib
                         break;
                     }
                     string recvMessage = new string(buff, 0, nbytes);
-                    Console.WriteLine(recvMessage);
+                    //Console.WriteLine(recvMessage);
+                    Messaggi.Add(recvMessage);
+
+                    //lancio effetivo dell'evento
+                    EventArgs e = new EventArgs();
+                    OnNewMessageHandler(e);
+
                 }
             }
             catch (Exception ex)

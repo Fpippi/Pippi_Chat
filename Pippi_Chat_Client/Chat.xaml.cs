@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pippi_AsyncSocketLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,29 @@ namespace Pippi_Chat_Client
     /// </summary>
     public partial class Chat : Window
     {
-        public Chat()
+        AsyncSocketClient Client;
+        public Chat(AsyncSocketClient client)
         {
             InitializeComponent();
+            Client = client;
+            Client.OnNewMessage += Client_OnNewMessage;
+        }
+
+        private void Client_OnNewMessage(object sender, EventArgs e)
+        {
+            //aggiornamento della listbox
+            lstMessaggi.ItemsSource = Client.Messaggi;
+            lstMessaggi.Items.Refresh();
+        }
+
+        private void txt_invio_Click(object sender, RoutedEventArgs e)
+        {
+            Client.invia(txt_invio1.Text);
+        }
+
+        private void btn_discontetti_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

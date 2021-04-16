@@ -41,7 +41,7 @@ namespace Pippi_Chat_Client
             Cliente.invia(txt_nickname.Text);
             
 
-            Chat app2 = new Chat();
+            Chat app2 = new Chat(Cliente);
             app2.Show();
             
             this.Hide();
