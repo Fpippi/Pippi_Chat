@@ -67,7 +67,7 @@ namespace Pippi_AsyncSocketLib
 
                 Debug.WriteLine("Pronto ad ascoltare...");
                 int nBytes = await reader.ReadAsync(buff, 0, buff.Length);    
-                string Nickname = new string(buff);
+                string Nickname = new string(buff, 0, nBytes);
                 Debug.WriteLine("Returned bytes: {0}. Nickname: {1}", nBytes, Nickname);
                 ClientChat newclient = new ClientChat();
                 newclient.Nickname = Nickname;
@@ -106,15 +106,19 @@ namespace Pippi_AsyncSocketLib
                         Debug.WriteLine("Client disconnesso.");
                         break;
                     }
-                    string recvMessage = new string(buff);
+                    string recvMessage = new string(buff, 0 ,nBytes);
                     Debug.WriteLine("Returned bytes: {0}. Messaggio: {1}", nBytes, recvMessage);
-                    inviaATutti(recvMessage);
+
+                    ClientChat nickClient = mclient.Where( e=> e.Client==client).FirstOrDefault();
+                    string risposta= $"{nickClient.Nickname}: "+ recvMessage;
+                    inviaATutti(risposta);
                 }
 
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                rimuoviClient(client);
             }
         }
 

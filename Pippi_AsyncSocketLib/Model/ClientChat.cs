@@ -12,5 +12,11 @@ namespace Pippi_AsyncSocketLib.Model
         public string Nickname { get; set; }
 
         public TcpClient Client { get; set; }
+
+        
    }
+
+    
+    
+    
 }
