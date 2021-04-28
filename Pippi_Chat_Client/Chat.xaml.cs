@@ -37,12 +37,23 @@ namespace Pippi_Chat_Client
 
         private void txt_invio_Click(object sender, RoutedEventArgs e)
         {
+            PlaySound_invio();
             Client.invia(txt_invio1.Text);
         }
 
         private void btn_discontetti_Click(object sender, RoutedEventArgs e)
         {
-
+            App.Current.Shutdown();
         }
+
+        void PlaySound_invio()
+        {
+            var uri = new Uri(@"D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\Sound\WhatsApp Sound Original Message.mp3", UriKind.RelativeOrAbsolute);
+            var player = new MediaPlayer();
+
+            player.Open(uri);
+            player.Play();
+        }
+
     }
 }

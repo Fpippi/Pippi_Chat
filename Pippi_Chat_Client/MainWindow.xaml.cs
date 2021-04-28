@@ -3,6 +3,7 @@ using Pippi_AsyncSocketLib.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,12 +23,13 @@ namespace Pippi_Chat_Client
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public AsyncSocketClient Cliente = new AsyncSocketClient();
 
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,13 +41,27 @@ namespace Pippi_Chat_Client
             Cliente.ConnettiAlServer();
 
             Cliente.invia(txt_nickname.Text);
-            
 
+            PlaySound();
+            
             Chat app2 = new Chat(Cliente);
             app2.Show();
             
             this.Hide();
 
         }
+
+        void PlaySound()
+        {
+            var uri = new Uri(@"D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\Sound\Snapchat Notification  Sound Effect.mp3", UriKind.RelativeOrAbsolute);
+            var player = new MediaPlayer();
+
+            player.Open(uri);
+            player.Play();
+        }
+
+
+
+
     }
 }

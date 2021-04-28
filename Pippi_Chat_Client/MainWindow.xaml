@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pippi_Chat_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="txt_ip" HorizontalAlignment="Left" Height="23" Margin="270,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Ip"/>
-        <TextBox x:Name="txt_nickname" HorizontalAlignment="Left" Height="23" Margin="270,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="NickName"/>
-        <TextBox x:Name="txt_porta" HorizontalAlignment="Left" Height="23" Margin="270,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Porta"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="270,342,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Content="Porta" HorizontalAlignment="Left" Margin="270,215,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ip" HorizontalAlignment="Left" Margin="270,156,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nickname" HorizontalAlignment="Left" Margin="270,98,0,0" VerticalAlignment="Top"/>
+        Title="MainWindow" Height="433.551" Width="525.065">
+    <Grid Background="Black">
+        <TextBox x:Name="txt_ip" HorizontalAlignment="Left" Height="23" Margin="171,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Ip" Text="127.0.0.1" FontFamily="Script MT Bold"/>
+        <TextBox x:Name="txt_nickname" HorizontalAlignment="Left" Height="23" Margin="171,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="NickName" FontFamily="Script MT Bold"/>
+        <TextBox x:Name="txt_porta" HorizontalAlignment="Left" Height="23" Margin="171,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Porta" Text="23000" FontFamily="Script MT Bold"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="171,331,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" FontFamily="Script MT Bold"/>
+        <Label Content="Porta" HorizontalAlignment="Left" Margin="171,243,0,0" VerticalAlignment="Top" Foreground="#FFFF8900" FontFamily="Snap ITC"/>
+        <Label Content="Ip" HorizontalAlignment="Left" Margin="171,184,0,0" VerticalAlignment="Top" Foreground="#FFFF8900" FontFamily="Snap ITC"/>
+        <Label Content="Nickname" HorizontalAlignment="Left" Margin="171,125,0,0" VerticalAlignment="Top" Foreground="#FFFF8900" FontFamily="Snap ITC"/>
 
     </Grid>
 </Window>

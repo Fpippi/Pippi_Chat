@@ -17,3 +17,4 @@ D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\obj\Debug\Pippi_Chat_Client.csproj.
 D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\obj\Debug\Pippi_Chat_Client.csproj.CopyComplete
 D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\obj\Debug\Pippi_Chat_Client.exe
 D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\obj\Debug\Pippi_Chat_Client.pdb
+D:\Scuola\Tpsit\Pippi_Chat\Pippi_Chat_Client\obj\Debug\Pippi_Chat_Client_Content.g.cs
